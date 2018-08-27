@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration Version="8.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="schemas/cd_storage_conf.xsd">
+    <Global>
+        <ObjectCache Enabled="false"/>
+        <Storages>
+            <StorageBindings>
+                <Bundle src="odata_dao_bundle.xml" />
+            </StorageBindings>
+            <Storage Type="persistence" Id="defaultdb" dialect="MSSQL" Class="com.tridion.storage.persistence.JPADAOFactory">
+                <Pool Type="jdbc" Size="10" MonitorInterval="60" IdleTimeout="120" CheckoutTimeout="120" />
+                <DataSource Class="com.microsoft.sqlserver.jdbc.SQLServerDataSource">
+                    <Property Name="serverName" Value="10.5.0.136" />
+                    <Property Name="portNumber" Value="1433" />
+                    <Property Name="databaseName" Value="Tridion_Broker" />
+                    <Property Name="user" Value="TridionDiscoveryUser" />
+                    <Property Name="password" Value="1q2w3e4R" />
+                </DataSource>
+            </Storage>
+        </Storages>
+    </Global>
+ 
+    <ItemTypes defaultStorageId="defaultdb" cached="false"/>
+</Configuration>
